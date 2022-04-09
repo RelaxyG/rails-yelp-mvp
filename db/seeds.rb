@@ -13,7 +13,6 @@
     name: Faker::Restaurant.name,
     address: Faker::Address.city,
     phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-    category: ["chinese", "italian", "japanese", "french", "belgian"].sample
+    category: %w[chinese italian japanese french belgian].sample
   )
-
 end

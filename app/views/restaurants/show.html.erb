@@ -19,10 +19,16 @@
   <strong>Category:</strong>
   <%= @restaurant.category %>
 </p>
+
 <% @restaurant.reviews.each do |r|%>
   <%=r.content%>
   <%=r.rating%>
+  <%= link_to "Remove",
+                  review_path(r),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
 <%end%>
+
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
